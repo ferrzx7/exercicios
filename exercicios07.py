@@ -1,16 +1,29 @@
-clientes = []
+import json
+import os
+
+
+# clientes = []
+
+db_clientes = "db_clientes.json"
+def carregar_dados():
+    if os.path.exists(db_clientes):
+        with open(db_clientes, "r", enconding="utf-8") as arq_json:
+            return json.load(arq_json)
+    else:
+        return []
+
 
 def obter_dados_dos_clientes():
-    nome_cliente = input("informe seu nome completo")
-    CPF_cliente = int(input("digite seu CPF"))
-    RG_cliente = int(input("digite seu RG"))
-    nascimento_cliente = float(input("informe sua data de nascimento"))
-    endereco_cliente = input("digite seu endereço")
-    cidade_cliente = input("informe sua cidade")
-    estado_cliente = input("informe seu estado")
-    telefone_cliente = (input("informe seu telefone"))
-    celular_cliente = int("informe seu celular")
-    email_cliente = input("informe seu email")
+    nome_cliente = input("informe seu nome completo: ")
+    CPF_cliente = int(input("digite seu CPF: "))
+    RG_cliente = int(input("digite seu RG: "))
+    nascimento_cliente = input("informe sua data de nascimento: ")
+    endereco_cliente = input("digite seu endereço: ")
+    cidade_cliente = input("informe sua cidade: ")
+    estado_cliente = input("informe seu estado: ")
+    telefone_cliente = int(input("informe seu telefone: "))
+    celular_cliente = int(input("informe seu celular: "))
+    email_cliente = input("informe seu email: ")
     
     cliente = {
         "nome_cliente": nome_cliente,
@@ -26,29 +39,34 @@ def obter_dados_dos_clientes():
 
     }
 
-    return clientes
+    return cliente
+
 
 def cadastrar_clientes(dados_clientes):
+    clientes = carregar_dados()
     clientes.append(dados_clientes)
 
-    return clientes
+    with open(db_clientes, "w", encoding="utf-8") as arq_json:
+        json.dump(clientes, arq_json, indent=4, ensure_ascii=False)
+
 
 def mostrar_dados_clientes(dados_clientes):
     for cliente in dados_clientes:
         print(f"""
-            nome do cliente : {cliente["nome do cliente"]}")
-            CPF do cliente : {cliente["CPF do cliente"]}")
-            RG do cliente : {cliente["RG do cliente"]}")
-            Data de Nascimento do cliente : {cliente["data de nascimento do cliente"]}")
-            endereco do cliente : {cliente["endereco do cliente"]}")
-            cidade do cliente : {cliente["cidade do cliente"]}")
-            estado do cliente : {cliente["estado do cliente"]}")
-            telefone do cliente : {cliente["telefone do cliente"]}")
-            celular do cliente : {cliente["celular do cliente"]}")
-            email do cliente : {cliente["email do cliente"]}")
+            nome do cliente : {cliente["nome_cliente"]}")
+            CPF do cliente : {cliente["CPF_do_cliente"]}")
+            RG do cliente : {cliente["RG_do_cliente"]}")
+            Data de Nascimento do cliente : {cliente["data_de_nascimento_do_cliente"]}")
+            endereco do cliente : {cliente["endereco_do_cliente"]}")
+            cidade do cliente : {cliente["cidade_do_cliente"]}")
+            estado do cliente : {cliente["estado_do_cliente"]}")
+            telefone do cliente : {cliente["telefone_do_cliente"]}")
+            celular do cliente : {cliente["celular_do_cliente"]}")
+            email do cliente : {cliente["email_do_cliente"]}")
 """)
         
 def iniciar_sistema():
+    clientes = carregar_dados()
     while True:
         print ("")
         print("="*80)
