@@ -18,7 +18,7 @@ def obter_dados():
 
     data_filme = {
         "data_filme": nome_filme, 
-        "dclassificacao": classificacao,
+        "classificacao": classificacao,
         "descricao": descricao,
         "categoria": categoria
     }
