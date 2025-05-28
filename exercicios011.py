@@ -11,7 +11,7 @@ def carregar_dados():
         return []
    
 def obter_dados():
-    modelo_veiculo = input("informe o modelo do veiculo: "),
+    modelo_veiculo = input("informe o modelo do veiculo: ")
     marca_veiculo = input("informe a marca do veiculo: ")
     placa_veiculo = input("informe a placa do veiculo: ")
     ano_veiculo = int(input("informe o ano do veiculo: "))

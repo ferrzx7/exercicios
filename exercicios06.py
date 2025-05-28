@@ -1,7 +1,7 @@
 def cadastrar_filmes(nome_filme, descricao, classificacao, categorias01, categorias02, categorias03):
     filmes = []
     filme = {
-        "nome": nome,
+        "nome": nome, 
         "descricao": descricao,
         "classificacao": classificacao,
         "categoria": [categorias01, categorias02, categorias03]

@@ -1,11 +1,9 @@
 [
     {
-        "data_veiculo": [
-            "gol"
-        ],
-        "marca": "vw",
-        "placa": "cgt6789",
-        "ano": 1999,
-        "cor": "prata"
+        "data_veiculo": "golf",
+        "marca": "volkswagen",
+        "placa": "dt34t68",
+        "ano": 2023,
+        "cor": "branco"
     }
 ]

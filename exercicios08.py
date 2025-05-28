@@ -13,4 +13,5 @@ def carregar_dados():
 clientes = carregar_dados()
 
 for cliente in clientes:
-    print(cliente[""])
+    print(cliente["João da Silva"])
+    
